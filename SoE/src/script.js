@@ -116,9 +116,13 @@ accordionHeaders.forEach((header) => {
 
 // Authentication Functions
 document.addEventListener("DOMContentLoaded", function () {
-  // Login
+ // Login
   document.getElementById("loginForm").addEventListener("submit", function (e) {
     e.preventDefault(); // Ngăn chặn load lại trang
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Kiểm tra định dạng email
+    const passwordRegex = /^.{6,}$/; // Mật khẩu ít nhất 6 ký tự
     const formData = new FormData(this);
     fetch("/auth", {
       method: "POST",
@@ -132,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch((error) => console.error("Error:", error));
+  });ror) => console.error("Error:", error));
   });
   // chức năng đăng xuất
   function logout() {
