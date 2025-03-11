@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cancellations - E-Shop</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">E-Shop</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+        <div class="user-profile">
+          <button class="profile-icon"><i class="fas fa-user"></i></button>
+          <div class="user-menu">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="account.html">Manage My Account</a>
+            <a href="orders.html">My Orders</a>
+            <a href="cancellations.html" class="active">My Cancellations</a>
+            <a href="admin.html">Admin</a>
+            <a href="#" onclick="handleLogout()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Cancellations Section -->
+    <div class="cancellations-container">
+      <h1>My Cancellations</h1>
+
+      <!-- Cancellation Form -->
+      <div class="cancellation-form">
+        <h2>Request Order Cancellation</h2>
+        <form id="cancellationForm">
+          <div class="form-group">
+            <label for="orderNumber">Order Number*</label>
+            <input
+              type="text"
+              id="orderNumber"
+              required
+              placeholder="Enter your order number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="cancellationReason">Reason for Cancellation*</label>
+            <select id="cancellationReason" required>
+              <option value="">Select a reason</option>
+              <option value="changed_mind">Changed my mind</option>
+              <option value="wrong_item">Ordered wrong item</option>
+              <option value="shipping_delay">Shipping delay</option>
+              <option value="found_better_price">
+                Found better price elsewhere
+              </option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="additionalComments">Additional Comments</label>
+            <textarea
+              id="additionalComments"
+              rows="4"
+              placeholder="Please provide any additional details about your cancellation request"
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-cancellation">
+            Submit Cancellation Request
+          </button>
+        </form>
+      </div>
+
+      <!-- Cancellation History -->
+      <div class="cancellation-history">
+        <h2>Cancellation History</h2>
+        <div class="cancellation-list">
+          <!-- Sample cancelled orders will be populated here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="cancellations.js"></script>
+  </body>
+</html>

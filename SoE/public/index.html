@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoE</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">E-Shop</a>
+      </div>
+
+      <!-- Menu Links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <div class="searchbar">
+          <input
+            type="text"
+            id="search-field"
+            placeholder="Search products..."
+          />
+          <div class="search-dropdown" id="search-dropdown">
+            <ul>
+              <li>Men's Casual Shirt</li>
+              <li>Women's Sneakers</li>
+              <li>Luxury Perfume</li>
+              <li>Leather Wallet</li>
+              <li>Smart Watch</li>
+              <li>Wireless Headphones</li>
+            </ul>
+          </div>
+          <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <div class="nav-icons">
+        <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+        <div class="user-profile">
+          <button class="profile-icon"><i class="fas fa-user"></i></button>
+          <div class="user-menu">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="account.html">Manage My Account</a>
+            <a href="orders.html">My Orders</a>
+            <a href="cancellations.html">My Cancellations</a>
+            <a href="admin.html">Admin</a>
+            <a href="#" onclick="handleLogout()">Logout</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Background Image Slider -->
+      <div class="slider">
+        <!-- Slide 1: Clothing -->
+        <div class="slide active">
+          <img
+            src="images/clothing.jpg"
+            alt="Clothing Collection"
+            class="slide-image"
+          />
+          <div class="content">
+            <h1>New Collection</h1>
+            <p>
+              Discover the latest trends in fashion. Shop now and elevate your
+              style.
+            </p>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Slide 2: Men's Shoes -->
+        <div class="slide">
+          <img src="images/shoes.jpg" alt="Men's Shoes" class="slide-image" />
+          <div class="content">
+            <h1>Men's Shoes</h1>
+            <p>
+              Step up your game with our premium collection of men's footwear.
+            </p>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Slide 3: Perfume -->
+        <div class="slide">
+          <img
+            src="images/perfume.jpg"
+            alt="Luxury Perfumes"
+            class="slide-image"
+          />
+          <div class="content">
+            <h1>Luxury Perfumes</h1>
+            <p>
+              Indulge in the finest fragrances that leave a lasting impression.
+            </p>
+            <a href="#" class="btn">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button class="slider-control prev" onclick="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-control next" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products" id="featured-products">
+      <h2>Outstanding products</h2>
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div
+          class="product-card product"
+          data-id="1"
+          data-name="Men's Casual Shirt"
+          data-description="A comfortable and stylish casual shirt perfect for any occasion. Made with high-quality materials for lasting comfort."
+        >
+          <img
+            src="images/product1.jpg"
+            alt="Product 1"
+            class="product-image"
+          />
+          <h3 class="product-name">Men's Casual Shirt</h3>
+          <p class="product-price">$29.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="view-details">See details</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div
+          class="product-card product"
+          data-id="2"
+          data-name="Women's Sneakers"
+          data-description="Trendy and comfortable sneakers designed for the modern woman. Perfect blend of style and comfort."
+        >
+          <img
+            src="images/product2.jpg"
+            alt="Product 2"
+            class="product-image"
+          />
+          <h3 class="product-name">Women's Sneakers</h3>
+          <p class="product-price">$49.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="view-details">See details</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div
+          class="product-card product"
+          data-id="3"
+          data-name="Luxury Perfume"
+          data-description="An exquisite fragrance that captures elegance and sophistication. Long-lasting scent for any occasion."
+        >
+          <img
+            src="images/product3.jpg"
+            alt="Product 3"
+            class="product-image"
+          />
+          <h3 class="product-name">Luxury Perfume</h3>
+          <p class="product-price">$79.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="view-details">See details</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div
+          class="product-card product"
+          data-id="4"
+          data-name="Leather Wallet"
+          data-description="Premium leather wallet with multiple compartments. Sleek design meets practical functionality."
+        >
+          <img
+            src="images/product4.jpg"
+            alt="Product 4"
+            class="product-image"
+          />
+          <h3 class="product-name">Leather Wallet</h3>
+          <p class="product-price">$39.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="view-details">See details</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div
+          class="product-card product"
+          data-id="5"
+          data-name="Smart Watch"
+          data-description="Feature-rich smartwatch with modern technology. Track your fitness and stay connected in style."
+        >
+          <img
+            src="images/product5.jpg"
+            alt="Product 5"
+            class="product-image"
+          />
+          <h3 class="product-name">Smart Watch</h3>
+          <p class="product-price">$99.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="view-details">See details</button>
+        </div>
+
+        <!-- Product 6 -->
+        <div
+          class="product-card product"
+          data-id="6"
+          data-name="Wireless Headphones"
+          data-description="High-quality wireless headphones with superior sound. Perfect for music lovers and professionals."
+        >
+          <img
+            src="images/product6.jpg"
+            alt="Product 6"
+            class="product-image"
+          />
+          <h3 class="product-name">Wireless Headphones</h3>
+          <p class="product-price">$59.99</p>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="view-details">See details</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Description Section -->
+    <section id="product-description" style="display: none">
+      <h2 id="product-name"></h2>
+      <p id="product-details"></p>
+      <button id="back-to-products">Return</button>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="product-categories">
+      <h2>Men's Fashion Categories</h2>
+      <div class="category-grid">
+        <!-- Category 1: Shirts -->
+        <div class="category-card">
+          <img
+            src="https://cdn3.iconfinder.com/data/icons/loundry/56/shirt__dress__cloth__wear__fashion-512.png"
+            alt="Shirts"
+            class="category-icon"
+          />
+          <h3 class="category-name">Shirts</h3>
+        </div>
+
+        <!-- Category 2: Pants -->
+        <div class="category-card">
+          <img
+            src="https://png.pngtree.com/png-vector/20230407/ourmid/pngtree-pants-line-icon-vector-png-image_6693260.png"
+            alt="Pants"
+            class="category-icon"
+          />
+          <h3 class="category-name">Pants</h3>
+        </div>
+
+        <!-- Category 3: Shoes -->
+        <div class="category-card">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/007/636/167/original/shoes-icon-design-free-vector.jpg"
+            alt="Shoes"
+            class="category-icon"
+          />
+          <h3 class="category-name">Shoes</h3>
+        </div>
+
+        <!-- Category 4: Accessories -->
+        <div class="category-card">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/017/771/428/original/set-of-icons-on-a-theme-accessories-supplies-for-mobile-phones-in-gray-colors-vector.jpg"
+            alt="Accessories"
+            class="category-icon"
+          />
+          <h3 class="category-name">Accessories</h3>
+        </div>
+
+        <!-- Category 5: Jackets -->
+        <div class="category-card">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/007/126/416/non_2x/jacket-icon-vector.jpg"
+            alt="Jackets"
+            class="category-icon"
+          />
+          <h3 class="category-name">Jackets</h3>
+        </div>
+
+        <!-- Category 6: Watches -->
+        <div class="category-card">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/000/653/438/original/vector-watch-icon-image.jpg"
+            alt="Watches"
+            class="category-icon"
+          />
+          <h3 class="category-name">Watches</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-us">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p class="brand-intro">
+          Welcome to <strong>Sieve of Eratosthenes</strong>, your go-to
+          destination for the latest in men's fashion. We are passionate about
+          delivering high-quality products that combine style, comfort, and
+          affordability.
+        </p>
+        <p class="unique-selling-point">
+          What sets us apart is our commitment to sustainability and customer
+          satisfaction. Every product is carefully curated to ensure it meets
+          our high standards, and we strive to provide an exceptional shopping
+          experience for every customer.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/team.jpg" alt="Our Team" class="team-image" />
+      </div>
+    </section>
+
+    <!-- Customer Reviews Slider Section -->
+    <section class="customer-reviews">
+      <h2>What Our Customers Say</h2>
+      <div class="slider-container">
+        <!-- Review 1 -->
+        <div class="review-card active">
+          <div class="user-info">
+            <i class="fas fa-user-circle user-icon"></i>
+            <div class="user-details">
+              <h3 class="user-name">Thanh Dat</h3>
+              <div class="star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            "I absolutely love the quality of the products! Fast shipping and
+            great customer service. Highly recommend!"
+          </p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="user-info">
+            <i class="fas fa-user-circle user-icon"></i>
+            <div class="user-details">
+              <h3 class="user-name">Van Phuoc</h3>
+              <div class="star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            "The shoes I bought are so comfortable and stylish. Will definitely
+            shop here again!"
+          </p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="user-info">
+            <i class="fas fa-user-circle user-icon"></i>
+            <div class="user-details">
+              <h3 class="user-name">Chi Thach</h3>
+              <div class="star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            "Great selection of products and excellent customer support. Very
+            happy with my purchase!"
+          </p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card">
+          <div class="user-info">
+            <i class="fas fa-user-circle user-icon"></i>
+            <div class="user-details">
+              <h3 class="user-name">Minh Tuan</h3>
+              <div class="star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            "The perfume smells amazing! Packaging was beautiful, and delivery
+            was super fast."
+          </p>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button class="slider-control prev" onclick="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-control next" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="special-offers">
+      <div class="offer-banner">
+        <div class="offer-content">
+          <h2>Flash Sale!</h2>
+          <p class="offer-description">
+            Don't miss out on our limited-time offer. Get up to
+            <strong>50% OFF</strong> on selected items.
+          </p>
+          <div class="pricing">
+            <span class="original-price">$100</span>
+            <span class="discounted-price">$50</span>
+          </div>
+          <div class="countdown-timer">
+            <div class="timer-box">
+              <span id="hours">00</span>
+              <span>Hours</span>
+            </div>
+            <div class="timer-box">
+              <span id="minutes">00</span>
+              <span>Minutes</span>
+            </div>
+            <div class="timer-box">
+              <span id="seconds">00</span>
+              <span>Seconds</span>
+            </div>
+          </div>
+          <a href="#" class="shop-now-btn">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Support Section -->
+    <section id="contact" class="contact-support">
+      <h2>Contact & Support</h2>
+      <div class="contact-container">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h3>Get in Touch</h3>
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-accordion">
+          <h3>Frequently Asked Questions</h3>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              How can I track my order?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>
+                You can track your order by logging into your account and
+                visiting the "Order History" section. You'll find a tracking
+                link there.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              What is your return policy?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>
+                We offer a 30-day return policy. If you're not satisfied with
+                your purchase, you can return it within 30 days for a full
+                refund.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              How do I contact customer support?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>
+                You can contact our customer support team by filling out the
+                contact form on this page or by emailing us at
+                support@eshop.com.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Do you offer international shipping?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Yes, we offer international shipping to most countries. Shipping
+                costs and delivery times vary depending on your location.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Exclusive</h3>
+          <div class="subscribe">
+            <p>Subscribe</p>
+            <p>Get 10% off your first order</p>
+            <div class="email-input">
+              <input type="email" placeholder="Enter your email" />
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Support</h3>
+          <p>66/68 Nguyen Thanh hon st.</p>
+          <p>tranqp406@gmail.com</p>
+          <p>0123456789</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Login / Register</a></li>
+            <li><a href="#">Cart</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Shop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Link</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Download App</h3>
+          <p>Save $3 with App New User Only</p>
+          <div class="qr-code">
+            <img src="images/qr-code.jpg" alt="QR Code" />
+            <div class="app-stores">
+              <a href="#"
+                ><img src="images/google-play.jpg" alt="Google Play"
+              /></a>
+              <a href="#"><img src="images/app-store.jpg" alt="App Store" /></a>
+            </div>
+          </div>
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Product Description Modal -->
+    <div class="product-description-modal" id="product-modal">
+      <div class="product-description-container">
+        <button class="close-button" onclick="closeProductModal()">
+          &times;
+        </button>
+        <div class="product-images-and-sizes">
+          <img id="modal-product-image" src="" alt="Product Image" />
+          <div class="product-sizes">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+          </div>
+        </div>
+        <div class="product-details">
+          <div>
+            <h2 id="modal-product-name"></h2>
+            <p class="price" id="modal-product-price"></p>
+            <p class="description" id="modal-product-description"></p>
+          </div>
+          <div class="product-actions">
+            <button class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i>Add to Cart
+            </button>
+            <button class="like">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart">
+      <h2>Shopping Cart</h2>
+      <div class="listCart">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="cart-summary">
+        <div class="total">
+          <span>Total:</span>
+          <span class="total-amount">$0.00</span>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="close">Close</div>
+        <div class="checkout">
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Favorites Modal -->
+    <div class="favorites-modal" id="favorites-modal">
+      <div class="favorites-container">
+        <div class="favorites-header">
+          <h2>My Favorites</h2>
+          <button class="close-button" onclick="closeFavoritesModal()">
+            &times;
+          </button>
+        </div>
+        <div class="favorites-list">
+          <!-- Favorite items will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      let favoriteProducts = new Set(); // Store favorite product IDs
+      let navHeartIcon = document.querySelector(".nav-icons .fa-heart");
+      let favoritesData = []; // Store favorite products data
+
+      // Open favorites modal when clicking the heart icon in nav
+      navHeartIcon.parentElement.addEventListener("click", function (e) {
+        e.preventDefault();
+        openFavoritesModal();
+      });
+
+      function openFavoritesModal() {
+        const modal = document.getElementById("favorites-modal");
+        updateFavoritesList();
+        modal.style.display = "flex";
+      }
+
+      function closeFavoritesModal() {
+        document.getElementById("favorites-modal").style.display = "none";
+      }
+
+      function updateFavoritesList() {
+        const favoritesList = document.querySelector(".favorites-list");
+        favoritesList.innerHTML = "";
+
+        if (favoritesData.length === 0) {
+          favoritesList.innerHTML =
+            "<p class='no-favorites'>No favorite items yet</p>";
+          return;
+        }
+
+        favoritesData.forEach((product) => {
+          const favoriteItem = document.createElement("div");
+          favoriteItem.className = "favorite-item";
+          favoriteItem.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="favorite-image">
+            <div class="favorite-details">
+              <h3>${product.name}</h3>
+              <p class="favorite-price">${product.price}</p>
+            </div>
+            <button class="remove-favorite" onclick="removeFromFavorites('${product.id}')">
+              <i class="fas fa-heart"></i>
+            </button>
+          `;
+          favoritesList.appendChild(favoriteItem);
+        });
+      }
+
+      function removeFromFavorites(productId) {
+        favoriteProducts.delete(productId);
+        favoritesData = favoritesData.filter((item) => item.id !== productId);
+        updateFavoritesList();
+
+        // Update heart icons
+        navHeartIcon.className =
+          favoriteProducts.size > 0 ? "fas fa-heart" : "far fa-heart";
+
+        // Update product modal heart if it's open
+        const modal = document.getElementById("product-modal");
+        if (modal.style.display === "flex") {
+          const likeButton = modal.querySelector(".like");
+          const heartIcon = likeButton.querySelector("i");
+          heartIcon.className = "far fa-heart";
+        }
+      }
+
+      function openProductModal(product) {
+        const modal = document.getElementById("product-modal");
+        const image = document.getElementById("modal-product-image");
+        const name = document.getElementById("modal-product-name");
+        const price = document.getElementById("modal-product-price");
+        const description = document.getElementById(
+          "modal-product-description"
+        );
+        const likeButton = modal.querySelector(".like");
+        const productId = product.getAttribute("data-id");
+
+        // Set modal content
+        image.src = product.querySelector(".product-image").src;
+        name.textContent = product.getAttribute("data-name");
+        price.textContent = product.querySelector(".product-price").textContent;
+        description.textContent = product.getAttribute("data-description");
+
+        // Update like button state
+        const heartIcon = likeButton.querySelector("i");
+        heartIcon.className = favoriteProducts.has(productId)
+          ? "fas fa-heart"
+          : "far fa-heart";
+
+        // Add click handler for like button
+        likeButton.onclick = function () {
+          const productId = product.getAttribute("data-id");
+          if (favoriteProducts.has(productId)) {
+            favoriteProducts.delete(productId);
+            heartIcon.className = "far fa-heart";
+            favoritesData = favoritesData.filter(
+              (item) => item.id !== productId
+            );
+          } else {
+            favoriteProducts.add(productId);
+            heartIcon.className = "fas fa-heart";
+            favoritesData.push({
+              id: productId,
+              name: product.getAttribute("data-name"),
+              price: product.querySelector(".product-price").textContent,
+              image: product.querySelector(".product-image").src,
+            });
+          }
+
+          // Update navigation heart icon
+          navHeartIcon.className =
+            favoriteProducts.size > 0 ? "fas fa-heart" : "far fa-heart";
+        };
+
+        // Show modal
+        modal.style.display = "flex";
+
+        // Add size selection functionality
+        document.querySelectorAll(".product-sizes span").forEach((span) => {
+          span.addEventListener("click", function () {
+            document
+              .querySelectorAll(".product-sizes span")
+              .forEach((s) => s.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      }
+
+      function closeProductModal() {
+        document.getElementById("product-modal").style.display = "none";
+      }
+
+      // Update the view-details click handlers
+      document.querySelectorAll(".view-details").forEach((button) => {
+        button.addEventListener("click", function () {
+          const product = this.closest(".product");
+          openProductModal(product);
+        });
+      });
+
+      // Close modal when clicking outside
+      document
+        .getElementById("product-modal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeProductModal();
+          }
+        });
+
+      // Cart functionality
+      let iconCart = document.querySelector(".fa-shopping-cart");
+      let cart = document.querySelector(".cart");
+      let closeCart = document.querySelector(".cart .close");
+      let listCart = [];
+
+      // Open cart when clicking the cart icon
+      iconCart.parentElement.addEventListener("click", function (e) {
+        e.preventDefault();
+        cart.classList.add("active");
+      });
+
+      // Close cart when clicking the close button
+      closeCart.addEventListener("click", function () {
+        cart.classList.remove("active");
+      });
+
+      // Function to add item to cart
+      function addToCart(product) {
+        let productId = product.getAttribute("data-id");
+        let productName = product.getAttribute("data-name");
+        let productPrice = product.querySelector(".product-price").textContent;
+        let productImage = product.querySelector(".product-image").src;
+
+        // Check if product already exists in cart
+        let existingProduct = listCart.find((item) => item.id === productId);
+
+        if (existingProduct) {
+          existingProduct.quantity++;
+        } else {
+          listCart.push({
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: 1,
+          });
+        }
+
+        updateCart();
+      }
+
+      // Function to update cart display
+      function updateCart() {
+        let cartHTML = document.querySelector(".listCart");
+        let totalAmount = 0;
+
+        cartHTML.innerHTML = "";
+
+        listCart.forEach((item) => {
+          let price = parseFloat(item.price.replace("$", ""));
+          totalAmount += price * item.quantity;
+
+          let cartItem = document.createElement("div");
+          cartItem.className = "cart-item";
+          cartItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="item-details">
+              <h3>${item.name}</h3>
+              <p>${item.price}</p>
+              <div class="quantity">
+                <button onclick="changeQuantity('${item.id}', '-')">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="changeQuantity('${item.id}', '+')">+</button>
+              </div>
+            </div>
+          `;
+          cartHTML.appendChild(cartItem);
+        });
+
+        document.querySelector(
+          ".total-amount"
+        ).textContent = `$${totalAmount.toFixed(2)}`;
+
+        // Update cart icon badge
+        let totalQuantity = listCart.reduce(
+          (sum, item) => sum + item.quantity,
+          0
+        );
+        let badge = document.createElement("span");
+        badge.className = "cart-badge";
+        badge.textContent = totalQuantity;
+
+        let existingBadge = iconCart.parentElement.querySelector(".cart-badge");
+        if (existingBadge) {
+          existingBadge.remove();
+        }
+        if (totalQuantity > 0) {
+          iconCart.parentElement.appendChild(badge);
+        }
+      }
+
+      // Function to change quantity
+      function changeQuantity(productId, action) {
+        let product = listCart.find((item) => item.id === productId);
+        if (product) {
+          if (action === "+") {
+            product.quantity++;
+          } else if (action === "-") {
+            product.quantity--;
+            if (product.quantity <= 0) {
+              listCart = listCart.filter((item) => item.id !== productId);
+            }
+          }
+          updateCart();
+        }
+      }
+
+      // Add to cart button click handler
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          let product = this.closest(".product-card");
+          addToCart(product);
+        });
+      });
+    </script>
+  </body>
+</html>

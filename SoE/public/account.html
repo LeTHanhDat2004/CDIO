@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage My Account - E-Shop</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">E-Shop</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+        <div class="user-profile">
+          <button class="profile-icon"><i class="fas fa-user"></i></button>
+          <div class="user-menu">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="account.html" class="active">Manage My Account</a>
+            <a href="#">My Orders</a>
+            <a href="cancellations.html">My Cancellations</a>
+            <a href="#">My Reviews</a>
+            <a href="#">Admin</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Account Management Section -->
+    <div class="account-container">
+      <div class="account-sidebar">
+        <div class="user-profile-summary">
+          <div class="profile-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <h3>John Doe</h3>
+          <p>john.doe@example.com</p>
+          <p class="member-since">Member since: January 2024</p>
+        </div>
+        <ul class="account-menu">
+          <li>
+            <a href="#profile" class="active"
+              ><i class="fas fa-user"></i> Profile Information</a
+            >
+          </li>
+          <li>
+            <a href="#addresses"
+              ><i class="fas fa-map-marker-alt"></i> Addresses</a
+            >
+          </li>
+          <li>
+            <a href="#security"><i class="fas fa-shield-alt"></i> Security</a>
+          </li>
+          <li>
+            <a href="#preferences"><i class="fas fa-cog"></i> Preferences</a>
+          </li>
+          <li>
+            <a href="#notifications"
+              ><i class="fas fa-bell"></i> Notifications</a
+            >
+          </li>
+          <li>
+            <a href="#payment"
+              ><i class="fas fa-credit-card"></i> Payment Methods</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="account-content">
+        <!-- Profile Information Section -->
+        <section id="profile" class="account-section active">
+          <h2>Profile Information</h2>
+          <form id="profileForm" class="account-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name*</label>
+                <input type="text" id="firstName" value="John" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name*</label>
+                <input type="text" id="lastName" value="Doe" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address*</label>
+              <input
+                type="email"
+                id="email"
+                value="john.doe@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" value="+1 234 567 8900" />
+            </div>
+            <div class="form-group">
+              <label for="birthday">Date of Birth</label>
+              <input type="date" id="birthday" value="1990-01-01" />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="save-button">Save Changes</button>
+          </form>
+        </section>
+
+        <!-- Addresses Section -->
+        <section id="addresses" class="account-section">
+          <h2>My Addresses</h2>
+          <div class="addresses-list">
+            <div class="address-card">
+              <div class="address-header">
+                <h3>Home Address</h3>
+                <span class="default-badge">Default</span>
+              </div>
+              <p>123 Main Street</p>
+              <p>Apt 4B</p>
+              <p>New York, NY 10001</p>
+              <div class="address-actions">
+                <button class="edit-button">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="delete-button">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            </div>
+            <button class="add-address-button">
+              <i class="fas fa-plus"></i> Add New Address
+            </button>
+          </div>
+        </section>
+
+        <!-- Security Section -->
+        <section id="security" class="account-section">
+          <h2>Security Settings</h2>
+          <form id="securityForm" class="account-form">
+            <div class="form-group">
+              <label for="currentPassword">Current Password*</label>
+              <input type="password" id="currentPassword" required />
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password*</label>
+              <input type="password" id="newPassword" required />
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm New Password*</label>
+              <input type="password" id="confirmPassword" required />
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="twoFactorAuth" />
+                Enable Two-Factor Authentication
+              </label>
+            </div>
+            <button type="submit" class="save-button">
+              Update Security Settings
+            </button>
+          </form>
+        </section>
+
+        <!-- Preferences Section -->
+        <section id="preferences" class="account-section">
+          <h2>Account Preferences</h2>
+          <form id="preferencesForm" class="account-form">
+            <div class="form-group">
+              <label>Language</label>
+              <select id="language">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Currency</label>
+              <select id="currency">
+                <option value="usd">USD ($)</option>
+                <option value="eur">EUR (€)</option>
+                <option value="gbp">GBP (£)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="emailMarketing" />
+                Receive marketing emails
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="smsMarketing" />
+                Receive SMS notifications
+              </label>
+            </div>
+            <button type="submit" class="save-button">Save Preferences</button>
+          </form>
+        </section>
+
+        <!-- Notifications Section -->
+        <section id="notifications" class="account-section">
+          <h2>Notification Settings</h2>
+          <form id="notificationsForm" class="account-form">
+            <div class="notification-group">
+              <h3>Order Notifications</h3>
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="orderConfirmation" checked />
+                  Order confirmation
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="shippingUpdates" checked />
+                  Shipping updates
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="deliveryConfirmation" checked />
+                  Delivery confirmation
+                </label>
+              </div>
+            </div>
+            <div class="notification-group">
+              <h3>Account Notifications</h3>
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="accountUpdates" checked />
+                  Account updates
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="securityAlerts" checked />
+                  Security alerts
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="save-button">
+              Update Notification Settings
+            </button>
+          </form>
+        </section>
+
+        <!-- Payment Methods Section -->
+        <section id="payment" class="account-section">
+          <h2>Payment Methods</h2>
+          <div class="payment-methods">
+            <div class="payment-card">
+              <div class="card-icon">
+                <i class="fab fa-cc-visa"></i>
+              </div>
+              <div class="card-info">
+                <p>Visa ending in 4242</p>
+                <p>Expires 12/25</p>
+              </div>
+              <div class="card-actions">
+                <button class="edit-button">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="delete-button">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            </div>
+            <button class="add-payment-button">
+              <i class="fas fa-plus"></i> Add New Payment Method
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="account.js"></script>
+  </body>
+</html>

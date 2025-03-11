@@ -1,0 +1,296 @@
+/* Container chính */
+.orders-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+.orders-container h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Bộ lọc đơn hàng */
+.order-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+/* Dropdown filter */
+.order-filters select,
+.order-filters input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button lọc */
+.filter-button {
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-button:hover {
+    background: #0056b3;
+}
+
+/* Danh sách đơn hàng */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Card đơn hàng */
+.order-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Header đơn hàng */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Trạng thái đơn hàng */
+.order-status {
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+.processing { background: #ffc107; }  /* Đang xử lý */
+.delivered { background: #28a745; }   /* Đã giao */
+.cancelled { background: #dc3545; }   /* Đã hủy */
+
+/* Thông tin sản phẩm */
+.order-items {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.order-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Thông tin sản phẩm */
+.item-details h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.item-quantity {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Chân đơn hàng */
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.order-total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Nút hành động */
+.order-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.track-order {
+    background: #007bff;
+    color: white;
+}
+
+.cancel-order {
+    background: #dc3545;
+    color: white;
+}
+/* ==== Cải tiến modal theo dõi đơn hàng ==== */
+.tracking-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Hiệu ứng mở modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Tiêu đề modal */
+.tracking-modal h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Nút đóng modal */
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #e74c3c;
+}
+
+/* Timeline tracking */
+.tracking-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Mỗi bước tracking */
+.tracking-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    padding-left: 10px;
+}
+
+/* Icon trạng thái */
+.step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease;
+}
+
+/* Đường nối giữa các bước */
+.tracking-step::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: #ccc;
+    left: 19px;
+    top: 40px;
+}
+
+/* Ẩn đường kẻ ở bước cuối cùng */
+.tracking-step:last-child::before {
+    display: none;
+}
+
+/* Khi đơn hàng hoàn thành */
+.tracking-step.completed .step-icon {
+    background: #2ecc71;
+}
+
+/* Khi đơn hàng đang vận chuyển */
+.tracking-step.active .step-icon {
+    background: #f1c40f;
+}
+
+/* Khi đơn hàng chưa hoàn thành */
+.tracking-step .step-icon {
+    background: #ddd;
+}
+
+/* Nội dung bước */
+.step-info {
+    font-size: 16px;
+}
+
+.step-info h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.step-info p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.track-order:hover { background: #0056b3; }
+.cancel-order:hover { background: #a71d2a; }

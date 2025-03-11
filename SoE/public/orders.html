@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Orders - E-Shop</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/oder.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">E-Shop</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+        <div class="user-profile">
+          <button class="profile-icon"><i class="fas fa-user"></i></button>
+          <div class="user-menu">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="account.html">Manage My Account</a>
+            <a href="orders.html" class="active">My Orders</a>
+            <a href="cancellations.html">My Cancellations</a>
+            <a href="admin.html">Admin</a>
+            <a href="#" onclick="handleLogout()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Orders Section -->
+    <div class="orders-container">
+      <h1>My Orders</h1>
+
+      <!-- Order Filters -->
+      <div class="order-filters">
+        <select id="orderStatus">
+          <option value="all">All Orders</option>
+          <option value="processing">Processing</option>
+          <option value="shipped">Shipped</option>
+          <option value="delivered">Delivered</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+        <div class="date-filter">
+          <input type="date" id="startDate" placeholder="Start Date" />
+          <input type="date" id="endDate" placeholder="End Date" />
+        </div>
+        <button class="filter-button">Apply Filters</button>
+      </div>
+
+      <!-- Orders List -->
+      <div class="orders-list">
+        <!-- Sample Order -->
+        <div class="order-card">
+          <div class="order-header">
+            <div class="order-info">
+              <span class="order-number">Order #12345</span>
+              <span class="order-date">Placed on: Jan 15, 2024</span>
+            </div>
+            <div class="order-status processing">Processing</div>
+          </div>
+          <div class="order-items">
+            <div class="order-item">
+              <img src="images/product1.jpg" alt="Product 1" />
+              <div class="item-details">
+                <h3>Men's Casual Shirt</h3>
+                <p class="item-price">$29.99</p>
+                <p class="item-quantity">Quantity: 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Total:</span>
+              <span class="total-amount">$29.99</span>
+            </div>
+            <div class="order-actions">
+              <button class="track-order">Track Order</button>
+              <button class="cancel-order">Cancel Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Order 2 -->
+        <div class="order-card">
+          <div class="order-header">
+            <div class="order-info">
+              <span class="order-number">Order #12346</span>
+              <span class="order-date">Placed on: Jan 10, 2024</span>
+            </div>
+            <div class="order-status delivered">Delivered</div>
+          </div>
+          <div class="order-items">
+            <div class="order-item">
+              <img src="images/product2.jpg" alt="Product 2" />
+              <div class="item-details">
+                <h3>Women's Sneakers</h3>
+                <p class="item-price">$49.99</p>
+                <p class="item-quantity">Quantity: 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="order-footer">
+            <div class="order-total">
+              <span>Total:</span>
+              <span class="total-amount">$49.99</span>
+            </div>
+            <div class="order-actions">
+              <button class="view-details">View Details</button>
+              <button class="buy-again">Buy Again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Tracking Modal -->
+    <div class="tracking-modal" id="trackingModal">
+      <div class="tracking-content">
+        <span class="close-modal">&times;</span>
+        <h2>Order Tracking</h2>
+        <div class="tracking-timeline">
+          <div class="tracking-step completed">
+            <div class="step-icon"><i class="fas fa-box"></i></div>
+            <div class="step-info">
+              <h4>Order Placed</h4>
+              <p>Jan 15, 2024 10:30 AM</p>
+            </div>
+          </div>
+          <div class="tracking-step completed">
+            <div class="step-icon"><i class="fas fa-check"></i></div>
+            <div class="step-info">
+              <h4>Order Confirmed</h4>
+              <p>Jan 15, 2024 11:00 AM</p>
+            </div>
+          </div>
+          <div class="tracking-step active">
+            <div class="step-icon"><i class="fas fa-truck"></i></div>
+            <div class="step-info">
+              <h4>In Transit</h4>
+              <p>Expected by Jan 18, 2024</p>
+            </div>
+          </div>
+          <div class="tracking-step">
+            <div class="step-icon"><i class="fas fa-home"></i></div>
+            <div class="step-info">
+              <h4>Delivered</h4>
+              <p>Pending</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="orders.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - SoE</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">SoE</a>
+      </div>
+
+      <!-- Menu Links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+
+      <!-- Icons -->
+      <div class="nav-icons">
+        <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+        <div class="user-profile">
+          <button class="profile-icon"><i class="fas fa-user"></i></button>
+          <div class="user-menu">
+            <a href="login.html">Login</a>
+            <a href="register.html" class="active">Register</a>
+            <a href="account.html">Manage My Account</a>
+            <a href="orders.html">My Orders</a>
+            <a href="cancellations.html">My Cancellations</a>
+            <a href="admin.html">Admin</a>
+            <a href="#" onclick="handleLogout()">Logout</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <!-- Register Section -->
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2>Create an Account</h2>
+        <p>Enter your details below</p>
+        <form
+          id="registerForm"
+          class="auth-form"
+          action="/register"
+          method="post"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="auth-button">Create Account</button>
+          </div>
+          <div class="form-links">
+            <span>Already have an account? <a href="login.html">Login</a></span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Return Policy</a>
+        </div>
+        <div class="social-media">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 SoE. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/register.js"></script>
+  </body>
+</html>
