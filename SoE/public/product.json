@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "name": "Giày Jd1 low nam nữ Egan, Giày JD nam nữ bản cao cấp full bill box",
+        "price": 249,
+        "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m6fnkkuhm9209d@resize_w900_nl.webp"
+    },
+    {
+        "id": 2,
+        "name": "Giày 𝐉𝐨𝐫𝐝𝐚𝐧 1 low Panda màu đen trắng nam nữ",
+        "price": 1000,
+        "image": "https://down-vn.img.susercontent.com/file/sg-11134201-22110-9gzohs5pc1jv4b.webp"
+    },
+    {
+        "id": 3,
+        "name": "PGiay Thể Thao Ni_ke Af1 mẫu mới hot hit , Vân đen trắng 2 lớp Ari forceOne mẫu mới 2024",
+        "price": 650,
+        "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m419upyzsavb90.webp"
+    }
+    ,
+    {
+        "id": 4,
+        "name": "Product 4",
+        "price": 420,
+        "image": "images/4.webp"
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "price": 120,
+        "image": "images/5.webp"
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "price": 120,
+        "image": "images/6.webp"
+    }
+]
