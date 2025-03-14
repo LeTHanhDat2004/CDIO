@@ -160,17 +160,19 @@ app.get("/", (req, res) => {
 });
 // API logout
 app.post("/logout", (req, res) => {
-    if (req.session) {
-        req.session.destroy((err) => {
-            if (err) {
-                throw err;
-            } else {
-                res.redirect("/");
-            }
-        });
-    } else {
-        res.send("No session found");
+    if (!req.session) {
+        return res.status(400).json({ success: false, message: "Bạn chưa đăng nhập!" });
     }
+
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Lỗi khi logout:", err);
+            return res.status(500).json({ success: false, message: "Lỗi server, thử lại sau!" });
+        }
+
+        res.clearCookie("connect.sid"); // Xóa cookie session
+        return res.json({ success: true, message: "Đăng xuất thành công!" });
+    });
 });
 //API register
 app.post("/register", async (req, res) => {
